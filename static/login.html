@@ -1,203 +1,157 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>管理学院登录页面</title>
-  <link href="content/ui/img/favicon.ico" rel="shortcut icon" />
+<meta charset="utf-8">
+<title>登录页面-VANS</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="content/ui/global/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <style type="text/css">
-  /* CSS Document */
-  *{margin:0px auto;pdding:0px;}
-  body{
-    margin:0px auto;
-    padding:0px;
-    width:100%;
-    height:100%;
-    background-color: #edecec}
-  .main_top{
-    width:100%;
-    height:50%;
-    background: #00bcd4;
-    position:fixed;}
-  .main_top_img{
-    width:100px;
-    height:100px;
-    left:50%;
-    position:absolute;
-    margin-left:-50px;
-    top:30%;
-    marign-top:-50px;}
-  /*登录框内容*/
-  .login_div{
-    width:500px;
-    height:289px;
-    background: #fff;
-    position: absolute;
-    top:50%;
-    margin-top:-145px;
-    left:50%;
-    margin-left:-250px;
-    z-index:100;
-    box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
-    border-radius: 2px;
-  }
-  h1.before{
-    background: -webkit-linear-gradient(right,rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
-    content: "";
-    height: 1px;
-    margin-top:29px;
-    width: 100%;
-  }
-  h1.after{
-    background: -webkit-linear-gradient(left,rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
-    content: "";
-    height: 1px;
-    margin-top:29px;
-    width: 100%;
-  }
-  h1 {
-    font-size: 26px;
-    font-weight:800;
-    font-family: inherit;
-    -webkit-margin-before: 0.67em;
-    -webkit-margin-after: 0.67em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-  }
-  .login_div_title{
-    width:100%;height:35px;margin-top:28px;margin-bottom:30px;
-  }
-  .h1_before{
-    height:35px;width:35%;float:left;
-  }
-  .h1_title{
-    height:35px;width:30%;float: left;text-align: center;
-    color: rgb(71, 63, 63);
-    letter-spacing: -0.05em;
-    line-height: 20px;
-  }
-  .h1_after{
-    height:35px;width:35%;float: left;
-  }
-  .login_name{
-    width:100%;height:35px;margin-bottom:20px;
-  }
-  .name_icon{width:90px;height:35px;float: left;}
-  .name_icon img{width:16px;height:16px;margin-top:18px;margin-left:60px;}
-  .name_input{width:344px;height:35px; float: left;}
-  .name_input .input_control{width:344px;height:35px;border:0;border-bottom:2px solid #2196F3;font-size:13px;background: #fff;}
-  input:active,input:focus,button:active,button:focus{box-shadow:none!important;outline:0;}
-  #slider {
-    width: 344px;
-    height: 35px;
-    margin-left:90px;
-    margin-top:30px;
-    position: relative;
-    border-radius: 4px;
-    background-color: #dae2d0;
-    overflow: hidden;
-    text-align: center;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-  }
+	@charset "utf-8";
+	/* CSS Document */
+	*{margin:0px auto;pdding:0px;}
+	body{margin:0px auto;padding:0px;width:100%;height:100%;
+		background:url(content/ui/img/bg_sea1.jpg) no-repeat;
+		background-attachment:fixed;
+		background-size: cover;
+		-webkit-background-size: cover;/* 兼容Webkit内核浏览器如Chrome和Safari */
+		-o-background-size: cover;/* 兼容Opera */
+		zoom: 1; }
+	#login_div{width:380px;height:300px;background-color:#FFF;border-radius:8px;
+				position:absolute;left:50%;top:50%;margin-left:-190px;margin-top:-150px;
+				filter:alpha(opacity=80); /*ie滤镜，透明度50%*/
+				-moz-opacity:0.8; /*Firefox私有，透明度50%*/
+				opacity:0.8;/*其他，透明度50%*/}
+				
+	#login_head{width:100%;height:50px;background-color:#3187C2;border-radius:8px 8px 0 0;}
+	#login_head p{color:#FFF;font-size:14px;line-height:5px;}	
+	#login_btn{width:85%;padding-left:1%;font-family:"幼圆";color:#76869F;font-size:12px;height:210px;}	
+	#login_sub{text-align:center;font-family:"黑体";}
+	
+	#login_footer{width:100%;height:40px;background-color:#E0E4EF;border-radius:0 0 8px 8px;}
+	#login_footer p{font-size:12px;color:#666;padding-top:12px;padding-left:20px;}
+	
+	#slider {
+	  width: 100%;
+	  height: 34px;
+	  position: relative;
+	  border-radius: 4px;
+	  background-color: #dae2d0;
+	  overflow: hidden;
+	  text-align: center;
+	  user-select: none;
+	  -moz-user-select: none;
+	  -webkit-user-select: none;
+	}
 
-  #slider_bg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    background-color: #7AC23C;
-    z-index: 1;
-  }
+	#slider_bg {
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  height: 100%;
+	  background-color: #7AC23C;
+	  z-index: 1;
+	}
 
-  #label {
-    width: 46px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 33px;
-    line-height: 33px;
-    border-radius:4px;
-    border: 1px solid #cccccc;
-    background: #fff;
-    z-index: 3;
-    cursor: move;
-    color: #ff9e77;
-    font-size: 16px;
-    font-weight: 900;
-  }
+	#label {
+	  width: 46px;
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  height: 34px;
+	  line-height: 34px;
+	  border-radius:4px;
+	  border: 1px solid #cccccc;
+	  background: #fff;
+	  z-index: 3;
+	  cursor: move;
+	  color: #ff9e77;
+	  font-size: 16px;
+	  font-weight: 900;
+	}
 
-  #labelTip {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    font-size: 13px;
-    font-family: 'Microsoft Yahei', serif;
-    color: #787878;
-    line-height: 33px;
-    text-align: center;
-    z-index: 2;
-  }
-  .login_btn{width:50px;height:50px;border-radius:50%;background-color:#f44336;border:0;
-    position: absolute;top:50%;margin-top:-27px;left:50%;margin-left:223px;z-index:999;
-    cursor:pointer;
-  }
-  .login_btn:hover{background-color:#4876FF;}
-  .btn_div img{width:23px;height:23px;
-    cursor:pointer;
-  }
-  .error_text{width:344px;height:25px;margin-left:90px;font-size:13px;color:#f44336;font-family: "微软雅黑";font-weight:800;}
+	#labelTip {
+	  position: absolute;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  font-size: 13px;
+	  font-family: 'Microsoft Yahei', serif;
+	  color: #787878;
+	  line-height: 34px;
+	  text-align: center;
+	  z-index: 2;
+	}
+
 </style>
+
 <body>
-<div class="main_top">
-<!--  <img class="main_top_img" src="content/ui/img/index_logo.png"/>-->
-</div>
-<div class="login_div">
-  <div class="login_div_title">
-    <div class="h1_before"><h1 class="before"></h1></div>
-    <div class="h1_title"><h1>管理学院</h1></div>
-    <div class="h1_after"><h1 class="after"></h1></div>
-  </div>
-  <div class="login_name">
-    <div class="name_icon">
-      <img src="content/ui/img/icon-user.png">
+	<div id="login_div">
+    	<div id="login_head">
+        	<table>
+            	<tr style="height:17px;">
+                </tr>
+            	<tr>
+                	<td style="width:50%;"><p>VANS管理系统</p></td>
+                    <td style="width:50%;"></td>             
+                </tr>
+                <tr>
+                	<td><p>vans managenment system</p></td>
+                    <td></td>
+                </tr>
+            </table>   
+        </div>
+    	<div id="login_btn">
+        	<br/>
+        	<div class="form-group">
+            	<table style="width:100%;">
+                    <tr>
+                    	<td style="width:14%;text-align:right;"><label class="control-label" for="inputSuccess1">用户名</label></td>
+                        <td style="width:1%;"></td>
+              			<td style="width:85%;" colspan="2"><input type="text" class="form-control" id="username" placeholder="请输入用户名"></td>
+              		</tr>
+                </table>
+            </div>
+            <div class="form-group">
+            	<table style="width:100%;">
+                    <tr>
+                        <td style="width:14%;text-align:right;"><label class="control-label" for="inputPassword">密&nbsp;&nbsp;码</label></td>
+                        <td style="width:1%;"></td>
+                        <td style="width:85%;" colspan="2"><input type="password" class="form-control" id="password" placeholder="请输入密码（6-18位数字+字母）"></td> 
+                    </tr>
+                </table>  
+            </div>
+            <div class="form-group">
+            	<table style="width:100%;">
+                <tr>
+                  <td style="width:14%;text-align:right;"><label class="control-label" for="inputVericode">验证码</label></td>
+                  <td style="width:1%;"></td>
+                  <td style="width:85%;">
+                    <div id="slider">
+                      <div id="slider_bg"></div>
+                      <span id="label">>></span> <span id="labelTip">拖动滑块验证</span>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div id="login_sub">
+                <button type="button" class="btn btn-warning" id="loginBtn" onclick="onLogin()" style="width:100%;">登&nbsp;&nbsp;录</button>	
+            </div>
+        </div>
+    	<div id="login_footer">
+        	<p>系统版本v1.0&nbsp;&nbsp;如有任何疑问，请联系管理员！</p>   
+        </div>
     </div>
-    <div class="name_input">
-      <input type="text" placeholder="用户名" id="username" class="input_control">
-    </div>
-  </div>
-  <div class="login_name">
-    <div class="name_icon">
-      <img src="content/ui/img/icon-pass.png">
-    </div>
-    <div class="name_input">
-      <input type="password" placeholder="密码" id="password" class="input_control">
-    </div>
-  </div>
-  <div class="login_name">
-    <div id="slider">
-      <div id="slider_bg"></div>
-      <span id="label">》》</span> <span id="labelTip">拖动滑块验证</span>
-    </div>
-  </div>
-  <div class="error_text">
-    <span id="errorText"></span>
-  </div>
-  <div class="btn_div" >
-    <button type="button" id="loginBtn" onclick="onLogin()" class="login_btn"><img src="content/ui/img/icon-arrow.png"/></button>
-  </div>
-</div>
-<script src="content/ui/global/jQuery/jquery-1.9.1.min.js"></script>
-<script src="content/ui/base/jquery.slideunlock.js"></script>
-<script src="//int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
-<script src="./config/index.js"></script>
+
+<script src="content/ui/global/jQuery/jquery-1.9.1.min.js"></script> 
+<script src="content/ui/base/jquery.slideunlock.js"></script> 
 <script>
   var silderValue = false;
   $(function () {
-    var slider = new SliderUnlock("#slider",{
-      successLabelTip : "恭喜您，验证成功"
+      var slider = new SliderUnlock("#slider",{
+      successLabelTip : "恭喜您，验证成功"	
     },function(){
       silderValue = true;
     });
@@ -218,55 +172,52 @@
 
   function onLogin(){
     $("#loginBtn").attr('disabled',"true");
-    var loginName = $("#username").val();
+    var userName = $("#username").val();
     var password = $("#password").val();
-    var errorText = "";
-    if( loginName == "" ){
-      errorText = "错误提示：请输入用户名";
-      $("#errorText").text(errorText);
+    if( userName == "" ){
+      alert("错误提示：请输入用户名");
+      //$("#errorText").text(errorText);
       $("#loginBtn").removeAttr("disabled");
       return
     }else if( password == "" ){
-      errorText = "错误提示：请输入密码";
-      $("#errorText").text(errorText);
+      alert("错误提示：请输入密码");
+      //$("#errorText").text(errorText);
       $("#loginBtn").removeAttr("disabled");
       return
     }else if( silderValue == false ){
-      errorText = "错误提示：请拖动滑块验证";
-      $("#errorText").text(errorText);
+      alert("错误提示：请拖动滑块验证");
+      //$("#errorText").text(errorText);
       $("#loginBtn").removeAttr("disabled");
       return
     }
-    errorText = "提示：验证通过，登录中...";
-    $("#errorText").text(errorText);
-    var loginInfo = {nowProvince: remote_ip_info["province"]+"省",nowCity: remote_ip_info["city"]+"市"};
-    var params = {userName:loginName,password:password};
+    //errorText = "提示：验证通过，登录中...";
+    //$("#errorText").text(errorText);
+    var params = {userName:userName,password:password};
     params = JSON.stringify(params);
     $.ajax({
       type: 'POST',
-      url: 'http://localhost:8088/auth/token',
+      url: BaseUrl + '/auth/token',
       dataType: "json",
       contentType:"application/json",
       data:params,
       success:function(data){
-        errorText = "提示：登录成功，页面跳转中...";
-        $("#errorText").text(errorText);
+        //errorText = "提示：登录成功，页面跳转中...";
+        //$("#errorText").text(errorText);
         if( data.code == true ){
           sessionStorage.setItem( "token", data.token_type + " " + data.access_token );
           window.location.href= AppPath + "/static/admin/index.html";
         }else{
-          errorText = "提示：用户名或密码错误，请重试...";
-          $("#errorText").text(errorText);
+          alert("提示：用户名或密码错误，请重试...");
+          //$("#errorText").text(errorText);
         }
       },
       error:function(xhr){
-        errorText = "错误提示：" + xhr.status;
-        $("#errorText").text(errorText);
+        alert("错误提示：" + xhr.status);
+        //$("#errorText").text(errorText);
       }
     });
     $("#loginBtn").removeAttr("disabled");
   }
-
-</script>
+</script> 
 </body>
 </html>
