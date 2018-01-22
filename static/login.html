@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理学院登录页面</title>
+  <link href="content/ui/img/favicon.ico" rel="shortcut icon" />
+</head>
+<style type="text/css">
+  /* CSS Document */
+  *{margin:0px auto;pdding:0px;}
+  body{
+    margin:0px auto;
+    padding:0px;
+    width:100%;
+    height:100%;
+    background-color: #edecec}
+  .main_top{
+    width:100%;
+    height:50%;
+    background: #00bcd4;
+    position:fixed;}
+  .main_top_img{
+    width:100px;
+    height:100px;
+    left:50%;
+    position:absolute;
+    margin-left:-50px;
+    top:30%;
+    marign-top:-50px;}
+  /*登录框内容*/
+  .login_div{
+    width:500px;
+    height:289px;
+    background: #fff;
+    position: absolute;
+    top:50%;
+    margin-top:-145px;
+    left:50%;
+    margin-left:-250px;
+    z-index:100;
+    box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
+    border-radius: 2px;
+  }
+  h1.before{
+    background: -webkit-linear-gradient(right,rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+    content: "";
+    height: 1px;
+    margin-top:29px;
+    width: 100%;
+  }
+  h1.after{
+    background: -webkit-linear-gradient(left,rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+    content: "";
+    height: 1px;
+    margin-top:29px;
+    width: 100%;
+  }
+  h1 {
+    font-size: 26px;
+    font-weight:800;
+    font-family: inherit;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+  }
+  .login_div_title{
+    width:100%;height:35px;margin-top:28px;margin-bottom:30px;
+  }
+  .h1_before{
+    height:35px;width:35%;float:left;
+  }
+  .h1_title{
+    height:35px;width:30%;float: left;text-align: center;
+    color: rgb(71, 63, 63);
+    letter-spacing: -0.05em;
+    line-height: 20px;
+  }
+  .h1_after{
+    height:35px;width:35%;float: left;
+  }
+  .login_name{
+    width:100%;height:35px;margin-bottom:20px;
+  }
+  .name_icon{width:90px;height:35px;float: left;}
+  .name_icon img{width:16px;height:16px;margin-top:18px;margin-left:60px;}
+  .name_input{width:344px;height:35px; float: left;}
+  .name_input .input_control{width:344px;height:35px;border:0;border-bottom:2px solid #2196F3;font-size:13px;background: #fff;}
+  input:active,input:focus,button:active,button:focus{box-shadow:none!important;outline:0;}
+  #slider {
+    width: 344px;
+    height: 35px;
+    margin-left:90px;
+    margin-top:30px;
+    position: relative;
+    border-radius: 4px;
+    background-color: #dae2d0;
+    overflow: hidden;
+    text-align: center;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+  }
+
+  #slider_bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: #7AC23C;
+    z-index: 1;
+  }
+
+  #label {
+    width: 46px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 33px;
+    line-height: 33px;
+    border-radius:4px;
+    border: 1px solid #cccccc;
+    background: #fff;
+    z-index: 3;
+    cursor: move;
+    color: #ff9e77;
+    font-size: 16px;
+    font-weight: 900;
+  }
+
+  #labelTip {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 13px;
+    font-family: 'Microsoft Yahei', serif;
+    color: #787878;
+    line-height: 33px;
+    text-align: center;
+    z-index: 2;
+  }
+  .login_btn{width:50px;height:50px;border-radius:50%;background-color:#f44336;border:0;
+    position: absolute;top:50%;margin-top:-27px;left:50%;margin-left:223px;z-index:999;
+    cursor:pointer;
+  }
+  .login_btn:hover{background-color:#4876FF;}
+  .btn_div img{width:23px;height:23px;
+    cursor:pointer;
+  }
+  .error_text{width:344px;height:25px;margin-left:90px;font-size:13px;color:#f44336;font-family: "微软雅黑";font-weight:800;}
+</style>
+<body>
+<div class="main_top">
+<!--  <img class="main_top_img" src="content/ui/img/index_logo.png"/>-->
+</div>
+<div class="login_div">
+  <div class="login_div_title">
+    <div class="h1_before"><h1 class="before"></h1></div>
+    <div class="h1_title"><h1>管理学院</h1></div>
+    <div class="h1_after"><h1 class="after"></h1></div>
+  </div>
+  <div class="login_name">
+    <div class="name_icon">
+      <img src="content/ui/img/icon-user.png">
+    </div>
+    <div class="name_input">
+      <input type="text" placeholder="用户名" id="username" class="input_control">
+    </div>
+  </div>
+  <div class="login_name">
+    <div class="name_icon">
+      <img src="content/ui/img/icon-pass.png">
+    </div>
+    <div class="name_input">
+      <input type="password" placeholder="密码" id="password" class="input_control">
+    </div>
+  </div>
+  <div class="login_name">
+    <div id="slider">
+      <div id="slider_bg"></div>
+      <span id="label">》》</span> <span id="labelTip">拖动滑块验证</span>
+    </div>
+  </div>
+  <div class="error_text">
+    <span id="errorText"></span>
+  </div>
+  <div class="btn_div" >
+    <button type="button" id="loginBtn" onclick="onLogin()" class="login_btn"><img src="content/ui/img/icon-arrow.png"/></button>
+  </div>
+</div>
+<script src="content/ui/global/jQuery/jquery-1.9.1.min.js"></script>
+<script src="content/ui/base/jquery.slideunlock.js"></script>
+<script src="//int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+<script src="./config/index.js"></script>
+<script>
+  var silderValue = false;
+  $(function () {
+    var slider = new SliderUnlock("#slider",{
+      successLabelTip : "恭喜您，验证成功"
+    },function(){
+      silderValue = true;
+    });
+    slider.init();
+  })
+
+  //捕获回车事件登录
+  document.onkeydown = function(event_e){
+    if(window.event)
+      event_e = window.event;
+    var int_keycode = event_e.charCode||event_e.keyCode;
+    if(int_keycode ==13){
+      onLogin();
+    }
+  }
+  //界面加载自动聚焦到用户名输入框
+  document.getElementById("username").focus();
+
+  function onLogin(){
+    $("#loginBtn").attr('disabled',"true");
+    var loginName = $("#username").val();
+    var password = $("#password").val();
+    var errorText = "";
+    if( loginName == "" ){
+      errorText = "错误提示：请输入用户名";
+      $("#errorText").text(errorText);
+      $("#loginBtn").removeAttr("disabled");
+      return
+    }else if( password == "" ){
+      errorText = "错误提示：请输入密码";
+      $("#errorText").text(errorText);
+      $("#loginBtn").removeAttr("disabled");
+      return
+    }else if( silderValue == false ){
+      errorText = "错误提示：请拖动滑块验证";
+      $("#errorText").text(errorText);
+      $("#loginBtn").removeAttr("disabled");
+      return
+    }
+    errorText = "提示：验证通过，登录中...";
+    $("#errorText").text(errorText);
+    var loginInfo = {nowProvince: remote_ip_info["province"]+"省",nowCity: remote_ip_info["city"]+"市"};
+    var params = {userName:loginName,password:password};
+    params = JSON.stringify(params);
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost:8088/auth/token',
+      dataType: "json",
+      contentType:"application/json",
+      data:params,
+      success:function(data){
+        errorText = "提示：登录成功，页面跳转中...";
+        $("#errorText").text(errorText);
+        if( data.code == true ){
+          sessionStorage.setItem( "token", data.token_type + " " + data.access_token );
+          window.location.href= AppPath + "/static/admin/index.html";
+        }else{
+          errorText = "提示：用户名或密码错误，请重试...";
+          $("#errorText").text(errorText);
+        }
+      },
+      error:function(xhr){
+        errorText = "错误提示：" + xhr.status;
+        $("#errorText").text(errorText);
+      }
+    });
+    $("#loginBtn").removeAttr("disabled");
+  }
+
+</script>
+</body>
+</html>
