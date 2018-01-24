@@ -15,7 +15,12 @@
   },
   "dependencies": {
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "element-ui": "^2.0.11",
+    "jquery": "^3.2.1",
+    "css-loader": "^0.28.4",
+    "style-loader": "^0.18.2",
+    "stylus-loader": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
@@ -61,6 +66,7 @@
     "shelljs": "^0.7.6",
     "sinon": "^2.1.0",
     "sinon-chai": "^2.8.0",
+    "style-loader": "^0.19.1",
     "url-loader": "^0.5.8",
     "vue-loader": "^12.1.0",
     "vue-style-loader": "^3.0.1",

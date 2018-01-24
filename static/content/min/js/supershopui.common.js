@@ -1057,7 +1057,7 @@ function setHeader(xhr) {
       //此处调用接口将数据存入缓存
       $.ajax({
         type: 'POST',
-        url: BaseUrl + '/sys/user/changeSkins',
+        url: BaseUrl + '/auth/user/changeSkins',
         dataType: "json",
         contentType:"application/json",
         data: params,
@@ -1085,7 +1085,7 @@ function setHeader(xhr) {
       }else{
         $.ajax({
           type: 'POST',
-          url: BaseUrl + '/sys/user/getSkins',
+          url: BaseUrl + '/auth/user/getSkins',
           dataType: "json",
           async: false,
           contentType:"application/json",

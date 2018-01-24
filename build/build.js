@@ -10,6 +10,27 @@ const chalk = require('chalk')
 const webpack = require('webpack')
 const config = require('../config')
 const webpackConfig = require('./webpack.prod.conf')
+var fs = require('fs')
+
+//打包时，先处理static静态资源下的访问路径问题
+switch (process.env.CODE_ENV) {
+  case 'production':
+    fs.createReadStream(path.resolve(__dirname, '../static/config/prod.config.js'))
+      .pipe(fs.createWriteStream(path.resolve(__dirname, '../static/config/index.js')))
+    break
+  case 'mock':
+    fs.createReadStream(path.resolve(__dirname, '../static/config/mock.config.js'))
+      .pipe(fs.createWriteStream(path.resolve(__dirname, '../static/config/index.js')))
+    break
+  case 'devbuild':
+    fs.createReadStream(path.resolve(__dirname, '../static/config/devbuild.config.js'))
+      .pipe(fs.createWriteStream(path.resolve(__dirname, '../static/config/index.js')))
+    break
+  default:
+    fs.createReadStream(path.resolve(__dirname, '../static/config/dev.config.js'))
+      .pipe(fs.createWriteStream(path.resolve(__dirname, '../static/config/index.js')));
+    break;
+}
 
 const spinner = ora('building for production...')
 spinner.start()
