@@ -242,7 +242,7 @@
           data: JSON.stringify(para),
           type: 'POST',
           success: function (data) {
-            if( data.success == true ){
+            if( data.isSuccess == true ){
               this.authList = data.data.authList;
               this.unAuthList = data.data.unAuthList;
             }else{
@@ -293,7 +293,7 @@
           data: JSON.stringify(para),
           type: 'POST',
           success: function (data) {
-            if( data.success == true ){
+            if( data.isSuccess == true ){
               this.$message({
                 message: '请求成功',
                 type: 'success'
@@ -400,7 +400,7 @@
             url: '/auth/user/edit',
             data: JSON.stringify(para),
             success: function (data) {
-              if(data.success == true ){
+              if(data.isSuccess == true ){
                 this.editLoading = false;
                 this.$message({
                   message: '请求成功',
@@ -439,7 +439,7 @@
           url: '/auth/user/edit',
           data: JSON.stringify(para),
           success: function (data) {
-            if(data.success == true ){
+            if(data.isSuccess == true ){
               this.editLoading = false;
               this.$message({
                 message: '请求成功',
@@ -476,7 +476,7 @@
             data: para,
             type: 'DELETE',
             success: function (data) {
-              if( data.success == true ){
+              if( data.isSuccess == true ){
                 this.$message({
                   message: '删除成功',
                   type: 'success'
@@ -509,7 +509,7 @@
                 url: '/auth/user/edit',
                 data: JSON.stringify(para),
                 success: function (data) {
-                  if(data.success == true ){
+                  if(data.isSuccess == true ){
                     this.editLoading = false;
                     this.$message({
                       message: '保存成功',

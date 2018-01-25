@@ -516,7 +516,7 @@
                 data: JSON.stringify(para),
                 success: function (data) {
                   this.addLoading = false;
-                  if (data.success == true) {
+                  if (data.isSuccess == true) {
                     this.$message({
                       message: '新增成功',
                       type: 'success'
@@ -646,7 +646,7 @@
                 data: JSON.stringify(para),
                 success: function (data) {
                   this.addLoading = false;
-                  if (data.success == true) {
+                  if (data.isSuccess == true) {
                     this.$message({
                       message: '新增成功',
                       type: 'success'
@@ -687,7 +687,7 @@
                 data: JSON.stringify(para),
                 success: function (data) {
                   this.addLoading = false;
-                  if (data.success == true) {
+                  if (data.isSuccess == true) {
                     this.$message({
                       message: data.responseMsg,
                       type: 'success'

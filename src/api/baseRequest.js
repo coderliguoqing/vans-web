@@ -33,7 +33,7 @@ export const baseAjax = ({
 } = {}) => {
   $.ajax({
     type,
-    url: AppConfig.BASE_PATH + url,
+    url: url.indexOf("/task") > -1 ? (AppConfig.TIMER_PATH + url) : (AppConfig.BASE_PATH + url),
     dataType,
     contentType,
     async,
